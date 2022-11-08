@@ -135,6 +135,7 @@ export default function HomeRoute() {
                     ),
                 }}
             />  
+
             <Drawer.Screen
                 name="Acelerometro"
                 component={AcelerometroScreen}
@@ -145,10 +146,51 @@ export default function HomeRoute() {
                             name="car"
                             size={24}
                             color={colors.white}
+                        ),
+                 }}
+            />
+                       
+
+             <Drawer.Screen
+                name="Pedometro"
+                component={PedometroScreen}
+                options= {{
+                    drawerLabel: "Pedômetro",
+                    drawerIcon: () => (
+                        <Foundation name = "foot" size={24} color = {colors.white}/>
+                    ),
+                }}
+            />
+
+            <Drawer.Screen
+                name="Magneto"
+                component={MagnetoScreen}
+                options={{
+                    drawerLabel: "Magneto",
+                    drawerIcon: () => (
+                        <FontAwesome name = "magnet"
+                            size={24}
+                            color={colors.white}
                         />
-        ),
-    }}
-/>
+                    ),
+                }}
+            />  
+
+            <Drawer.Screen
+                name="Gyroscopio"
+                component={GyroscopioScreen}
+                options={{
+                    drawerLabel: "Gyroscópio",
+                    drawerIcon: () => (
+                        <FontAwesome 
+                            name = "balance-scale"
+                            size={24}
+                            color={colors.white}
+                        />
+                    ),
+                }}
+            /> 
+ 
         </Drawer.Navigator>
     );
 }
