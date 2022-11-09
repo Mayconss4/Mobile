@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, StyleSheet } from "react-native"
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import {Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import { Ionicons, Feather, MaterialCommunityIcons, FontAwesome, Foundation } from "@expo/vector-icons";
 import colors from "../styles/colors";
-import { ChatScreen, AcelerometroScreen, MapScreen, PerfilScreen, SairScreen, CameraScreen, ArquivoScreen, QrCodeScreen, VideoAudioScreen } from "../screens";
+import { ChatScreen, AcelerometroScreen, MapScreen, PerfilScreen, SairScreen, CameraScreen, ArquivoScreen, QrCodeScreen, VideoAudioScreen, GyroscopioScreen, MagnetoScreen, PedometroScreen } from "../screens";
 import DrawerNavigation from "./drawer.navigation";
 import ChatNavigation from "./chat.navigation";
 
@@ -135,7 +135,6 @@ export default function HomeRoute() {
                     ),
                 }}
             />  
-
             <Drawer.Screen
                 name="Acelerometro"
                 component={AcelerometroScreen}
@@ -145,56 +144,56 @@ export default function HomeRoute() {
                         <MaterialCommunityIcons
                             name="car"
                             size={24}
-                            color={colors.white}
-                        ),
-                 }}
-            />
-                       
-
-             <Drawer.Screen
-                name="Pedometro"
-                component={PedometroScreen}
-                options= {{
-                    drawerLabel: "Pedômetro",
-                    drawerIcon: () => (
-                        <Foundation name = "foot" size={24} color = {colors.white}/>
-                    ),
-                }}
-            />
-
-            <Drawer.Screen
-                name="Magneto"
-                component={MagnetoScreen}
-                options={{
-                    drawerLabel: "Magneto",
-                    drawerIcon: () => (
-                        <FontAwesome name = "magnet"
-                            size={24}
-                            color={colors.white}
+                            color={colors.primary}
                         />
                     ),
                 }}
-            />  
-
+            />
             <Drawer.Screen
                 name="Gyroscopio"
                 component={GyroscopioScreen}
-                options={{
+                options= {{
                     drawerLabel: "Gyroscópio",
                     drawerIcon: () => (
-                        <FontAwesome 
-                            name = "balance-scale"
+                        <FontAwesome
+                            name="balance-scale"
                             size={24}
-                            color={colors.white}
+                            color={colors.primary}
                         />
                     ),
                 }}
-            /> 
- 
+            />
+            <Drawer.Screen
+                name="Magneto"
+                component={MagnetoScreen}
+                options= {{
+                    drawerLabel: "Magneto",
+                    drawerIcon: () => (
+                        <FontAwesome
+                            name="magnet"
+                            size={24}
+                            color={colors.primary}
+                        />
+                    ),
+                }}
+            />
+            <Drawer.Screen
+                name="Pedometro"
+                component={PedometroScreen}
+                options={{
+                    drawerLabel: "Pedômetro",
+                    drawerIcon: () => (
+                        <Foundation
+                            name="foot"
+                            size={24}
+                            color={colors.primary}
+                        />
+                    ),
+                }}
+            />
         </Drawer.Navigator>
     );
 }
-
 
 
 
